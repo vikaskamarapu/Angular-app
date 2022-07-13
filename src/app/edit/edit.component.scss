@@ -1,0 +1,43 @@
+.add-page {
+    display: flex;
+}
+
+.add-button {
+    text-align: right;
+}
+
+.form-box {
+    width: 720px;
+    box-shadow: black 1px 1px 5px;
+    margin: 25px;
+    margin-top: 48px;
+    padding: 20px;
+}
+.page-body{
+    padding: 20px;
+    display: flex;
+}
+.sub-heading{
+    font-size:medium;
+    margin: 0px;
+    margin-top: 5px;
+}
+.container{
+    display: flex;
+}
+.table{
+    width: 382px;
+    margin-top: 20px;
+    border:solid #CCCCCC;
+    border-width: 0.1px;
+}
+.card{
+    border:solid #CCCCCC;
+    border-width: 0.9px;
+    padding-bottom: 8px;
+    padding-left: 11px;
+}
+.card-title{
+    font-size:27px;
+    font-weight:330;
+}

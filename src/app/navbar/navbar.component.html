@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div class="nav-bar">
+        <div class="nav-items">
+            <span class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+                <span class="white-line"></span>
+                <a routerLink="/" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+                    <b>HOME</b>
+                </a>
+            </span>
+
+            <span class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+                <span class="white-line"></span>
+                <a routerLink="/add" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+                    <b>+ADD</b>
+                </a>
+            </span>
+        </div>
+
+        <div>
+            <img class="blog-icon" src="../../assets/images/blog-icon.png" alt="blog-icon" height="24px" width="24px" />
+        </div>
+    </div>
+</body>
+
+</html>

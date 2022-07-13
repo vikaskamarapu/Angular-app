@@ -1,0 +1,34 @@
+<div>
+    <div class="page-body">
+        <h5 class="sub-heading">CONTACTS</h5>
+        <div class="container">
+            <div [ngClass]="{'table':userService.arr.length > 0}">
+                <div *ngFor="let contact of userService.arr; let i = index;">
+                    <div class="card" (click)="showDetails(i)" [ngClass]="{'selected':userService.selectedindex===i}">
+                        <div class="card-title">{{contact.name}}</div>
+                        <div>{{contact.email}}</div>
+                        <div>{{contact.mobile}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="div-active" *ngIf="showContacts">
+                <div class="div-active-title line-gap">{{name}}</div>
+                <div class="line-gap">Email: <span>{{email}}</span></div>
+                <div>Moblie: <span>{{mobile}}</span></div>
+                <div class="line-gap">Landline: <span>{{landline}}</span></div>
+                <div class="line-gap">Website: <span>{{website}}</span></div>
+                <div>Address: <span>{{address}}</span>
+                </div>
+            </div>
+            <div class="div-flex" *ngIf="showContacts">
+                <a (click)="onEdit()" class="action"><img src="../../assets/images/edit1.jpg" class="action-icon"
+                        width="13px" height="15px" [ngStyle]="{'margin-top': '14px'}">
+                    <span class="action-name">EDIT</span></a>
+                <a (click)="onDelete()" class="action"><img src="../../assets/images/delete1.png" class="action-icon"
+                        height="22px" width="14px">
+                    <span class="action-name">DELETE</span></a>
+            </div>
+        </div>
+    </div>
+</div>
