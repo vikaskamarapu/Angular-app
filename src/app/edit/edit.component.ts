@@ -31,4 +31,8 @@ export class EditComponent implements OnInit {
       this.router.navigate(['/'])
     }
   }
+  showDetails(i:number){
+    this.userService.selectedindex=i;
+    this.router.navigate(['/']);
+  }
 }

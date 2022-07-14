@@ -19,7 +19,7 @@
             <h5 class="sub-heading">CONTACTS</h5>
             <div [ngClass]="{'table':userService.arr.length > 0}">
                 <div *ngFor="let contact of userService.arr; let i = index;">
-                    <div class="card">
+                    <div class="card" (click)="showDetails(i)">
                         <div class="card-title">{{contact.name}}</div>
                         <div>{{contact.email}}</div>
                         <div>{{contact.mobile}}</div>
