@@ -12,16 +12,16 @@
                 </div>
             </div>
 
-            <div class="div-active" *ngIf="showContacts">
-                <div class="div-active-title line-gap">{{name}}</div>
-                <div class="line-gap">Email: <span>{{email}}</span></div>
-                <div>Moblie: <span>{{mobile}}</span></div>
-                <div class="line-gap">Landline: <span>{{landline}}</span></div>
-                <div class="line-gap">Website: <span>{{website}}</span></div>
-                <div>Address: <span>{{address}}</span>
+            <div class="div-active" *ngIf="userService.showContacts">
+                <div class="div-active-title line-gap">{{userService.arr[userService.selectedindex].name}}</div>
+                <div class="line-gap">Email: <span>{{userService.arr[userService.selectedindex].email}}</span></div>
+                <div>Moblie: <span>{{userService.arr[userService.selectedindex].mobile}}</span></div>
+                <div class="line-gap">Landline: <span>{{userService.arr[userService.selectedindex].landline}}</span></div>
+                <div class="line-gap">Website: <span>{{userService.arr[userService.selectedindex].website}}</span></div>
+                <div>Address: <span>{{userService.arr[userService.selectedindex].address}}</span>
                 </div>
             </div>
-            <div class="div-flex" *ngIf="showContacts">
+            <div class="div-flex" *ngIf="userService.showContacts">
                 <a (click)="onEdit()" class="action"><img src="../../assets/images/edit1.jpg" class="action-icon"
                         width="13px" height="15px" [ngStyle]="{'margin-top': '14px'}">
                     <span class="action-name">EDIT</span></a>

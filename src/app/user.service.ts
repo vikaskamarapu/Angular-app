@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
   public selectedindex: number = -1;
+  public showContacts: boolean = false;
   public arr: any = [
     {"name": "Harsha Vardhan Pendyala", "email": "harsha@fosterate.com", "mobile": 7777888855, "landline": "040 30 1231211", "website": "http://www.technovert.com", "address": "hyderabad Telangana 500061"},
 

@@ -34,6 +34,7 @@ export class AddComponent implements OnInit {
   }
   showDetails(i:number){
     this.userService.selectedindex=i;
+    this.userService.showContacts=true;
     this.router.navigate(['/']);
   }
 }
