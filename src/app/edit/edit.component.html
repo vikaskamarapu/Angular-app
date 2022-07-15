@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@363&display=swap" rel="stylesheet">
-
-</head>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
 
 <body>
     <div class="page-body">
         <div>
-            <h5 class="sub-heading">CONTACTS</h5>
+            <h5 class="subb-heading">CONTACTS</h5>
             <div [ngClass]="{'table':userService.arr.length > 0}">
                 <div *ngFor="let contact of userService.arr; let i = index;">
-                    <div class="card" (click)="showDetails(i)">
-                        <div class="card-title">{{contact.name}}</div>
+                    <div class="item" (click)="showDetails(i)">
+                        <div class="item-title">{{contact.name}}</div>
                         <div>{{contact.email}}</div>
                         <div>{{contact.mobile}}</div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="caution" *ngIf="userService.arr.length==0">
+            No Contacts Available
+        </div>
+
         <div class="form-box">
             <form [formGroup]="editContactForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">

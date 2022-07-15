@@ -17,7 +17,7 @@
     padding: 20px;
     display: flex;
 }
-.sub-heading{
+.subb-heading{
     font-size:medium;
     margin: 0px;
     margin-top: 5px;
@@ -31,13 +31,17 @@
     border:solid #CCCCCC;
     border-width: 0.1px;
 }
-.card{
+.item{
     border:solid #CCCCCC;
     border-width: 0.9px;
     padding-bottom: 8px;
     padding-left: 11px;
 }
-.card-title{
+.item-title{
     font-size:27px;
     font-weight:330;
+}
+.caution{
+    margin-top: 40px;
+    font-size: xx-large;
 }

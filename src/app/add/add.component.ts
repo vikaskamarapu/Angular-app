@@ -29,6 +29,8 @@ export class AddComponent implements OnInit {
     }
     else {
       this.userService.arr.push(this.addContactForm.value)
+      this.userService.selectedindex=this.userService.arr.length-1;
+      this.userService.showContacts=true;
       this.router.navigate(['/'])
     }
   }

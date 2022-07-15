@@ -20,5 +20,9 @@ export class HomeComponent implements OnInit {
   }
   onDelete(){
     this.userService.arr.splice(this.userService.selectedindex, 1);
+    this.userService.selectedindex=0;
+    if(this.userService.arr.length===0){
+      this.userService.showContacts=false;
+    }
   }
 }
