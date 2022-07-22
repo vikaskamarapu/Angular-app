@@ -13,7 +13,7 @@ export class AddComponent implements OnInit {
   constructor(private addForm: FormBuilder, public userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.addContactForm.controls)
+    
   }
   addContactForm = this.addForm.group({
     name: ['', Validators.required],
@@ -29,14 +29,14 @@ export class AddComponent implements OnInit {
     }
     else {
       this.userService.arr.push(this.addContactForm.value)
-      this.userService.selectedindex=this.userService.arr.length-1;
-      this.userService.showContacts=true;
+      this.userService.selectedindex = this.userService.arr.length - 1;
+      this.userService.showContacts = true;
       this.router.navigate(['/'])
     }
   }
-  showDetails(i:number){
-    this.userService.selectedindex=i;
-    this.userService.showContacts=true;
+  showDetails(i: number) {
+    this.userService.selectedindex = i;
+    this.userService.showContacts = true;
     this.router.navigate(['/']);
   }
 }

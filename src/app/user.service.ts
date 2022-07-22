@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -15,5 +16,11 @@ export class UserService {
 
   ]
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+
+  getPosts(){
+    this.http.get('https://myfosterateapp-default-rtdb.firebaseio.com/posts.json').subscribe((response)=>{
+      console.log(response);
+    });
+  }
 }

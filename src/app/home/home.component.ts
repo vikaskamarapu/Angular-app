@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
   showDetails(i: number) {
+    this.userService.getPosts();
     this.userService.selectedindex= i
     this.userService.showContacts=true;
   }

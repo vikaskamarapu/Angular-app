@@ -48,11 +48,13 @@
     position: absolute;
 }
 .action{
+    cursor: pointer;
     display: flex;
     text-decoration: none;
     color: black;
     margin-right: 38px;
 }
+
 .action-name{
     padding-left: 9px;
     margin-top: 13px;

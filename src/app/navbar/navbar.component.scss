@@ -22,6 +22,11 @@
       background-color: #ff9900;
       color: black;
 
+      a:hover {
+          text-decoration: none;
+          color: black;
+      }
+
       .white-line {
           background-color: white;
           width: 2px;
@@ -44,7 +49,7 @@
       margin-right: 7px;
   }
 
-  a:hover{
-    text-decoration: none;
-    color: white;
+  a:hover {
+      text-decoration: none;
+      color: white;
   }

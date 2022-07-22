@@ -10,7 +10,7 @@
 
     <div>
         <div class="page-body">
-            <h5 class="subb-heading">CONTACTS</h5>
+            <h5 class="subb-heading" *ngIf="userService.arr.length > 0">CONTACTS</h5>
             <div class="page-container">
                 <div [ngClass]="{'table':userService.arr.length > 0}">
                     <div *ngFor="let contact of userService.arr; let i = index;">
