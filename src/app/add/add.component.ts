@@ -13,26 +13,21 @@ export class AddComponent implements OnInit {
   constructor(private addForm: FormBuilder, public userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    
+
   }
   addContactForm = this.addForm.group({
     name: ['', Validators.required],
-    email: ['', Validators.required],
-    mobile: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    mobile: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
     landline: ['',],
     website: [''],
     address: [''],
   })
   onSubmit() {
-    if (this.addContactForm.value.name === '' || this.addContactForm.value.email === '' || this.addContactForm.value.mobile === '') {
-      window.alert('Fill all required fields')
-    }
-    else {
-      this.userService.arr.push(this.addContactForm.value)
-      this.userService.selectedindex = this.userService.arr.length - 1;
-      this.userService.showContacts = true;
-      this.router.navigate(['/'])
-    }
+    this.userService.arr.push(this.addContactForm.value)
+    this.userService.selectedindex = this.userService.arr.length - 1;
+    this.userService.showContacts = true;
+    this.router.navigate(['/'])
   }
   showDetails(i: number) {
     this.userService.selectedindex = i;

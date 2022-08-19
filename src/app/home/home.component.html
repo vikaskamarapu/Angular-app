@@ -10,10 +10,9 @@
 
     <div>
         <div class="page-body">
-            <h5 class="subb-heading" *ngIf="userService.arr.length > 0">CONTACTS</h5>
-            <div class="page-container">
-                <div [ngClass]="{'table':userService.arr.length > 0}">
-                    <div *ngFor="let contact of userService.arr; let i = index;">
+            <div>
+                <h5 class="subb-heading" *ngIf="userService.arr.length > 0">CONTACTS</h5>
+                    <div class="table" *ngFor="let contact of userService.arr; let i = index;">
                         <div class="item" (click)="showDetails(i)"
                             [ngClass]="{'selected':userService.selectedindex===i}">
                             <div class="item-title">{{contact.name}}</div>
@@ -21,32 +20,32 @@
                             <div>{{contact.mobile}}</div>
                         </div>
                     </div>
-                </div>
+            </div>
 
-                <div class="caution" *ngIf="userService.arr.length==0">
-                    No Contacts Available
-                </div>
+            <div class="caution" *ngIf="userService.arr.length==0">
+                No Contacts Available
+            </div>
 
-                <div class="div-active" *ngIf="userService.showContacts">
-                    <div class="div-active-title line-gap">{{userService.arr[userService.selectedindex].name}}</div>
-                    <div class="line-gap">Email: <span>{{userService.arr[userService.selectedindex].email}}</span></div>
-                    <div>Moblie: <span>{{userService.arr[userService.selectedindex].mobile}}</span></div>
-                    <div class="line-gap">Landline: <span>{{userService.arr[userService.selectedindex].landline}}</span>
-                    </div>
-                    <div class="line-gap">Website: <span>{{userService.arr[userService.selectedindex].website}}</span>
-                    </div>
-                    <div>Address: <span>{{userService.arr[userService.selectedindex].address}}</span>
-                    </div>
+            <div class="div-active" *ngIf="userService.showContacts">
+                <div class="div-active-title line-gap">{{userService.arr[userService.selectedindex].name}}</div>
+                <div class="line-gap">Email: <span>{{userService.arr[userService.selectedindex].email}}</span></div>
+                <div>Moblie: <span>{{userService.arr[userService.selectedindex].mobile}}</span></div>
+                <div class="line-gap">Landline: <span>{{userService.arr[userService.selectedindex].landline}}</span>
                 </div>
-                <div class="div-flex" *ngIf="userService.showContacts">
-                    <a (click)="onEdit()" class="action"><img src="../../assets/images/edit1.jpg" class="action-icon"
-                            width="13px" height="15px" [ngStyle]="{'margin-top': '14px'}">
-                        <span class="action-name">EDIT</span></a>
-                    <a (click)="onDelete()" class="action"><img src="../../assets/images/delete1.png"
-                            class="action-icon" height="22px" width="14px">
-                        <span class="action-name">DELETE</span></a>
+                <div class="line-gap">Website: <span>{{userService.arr[userService.selectedindex].website}}</span>
+                </div>
+                <div>Address: <span>{{userService.arr[userService.selectedindex].address}}</span>
                 </div>
             </div>
+            <div class="div-flex" *ngIf="userService.showContacts">
+                <a (click)="onEdit()" class="action"><img src="../../assets/images/edit1.jpg" class="action-icon"
+                        width="13px" height="15px" [ngStyle]="{'margin-top': '14px'}">
+                    <span class="action-name">EDIT</span></a>
+                <a (click)="onDelete()" class="action"><img src="../../assets/images/delete1.png" class="action-icon"
+                        height="22px" width="14px">
+                    <span class="action-name">DELETE</span></a>
+            </div>
+
         </div>
     </div>
 

@@ -1,68 +1,87 @@
-.page-body{
+.page-body {
     padding: 20px;
-}
-.subb-heading{
-    font-size:medium;
-    margin: 0px;
-    margin-top: 5px;
-}
-.page-container{
     display: flex;
 }
-.table{
-    width: 382px;
-    margin-top: 20px;
-    border:solid #CCCCCC;
-    border-width: 0.1px;
+
+.subb-heading {
+    font-size: medium;
+    margin: 0px;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
-.item{
-    border:solid #CCCCCC;
+
+
+.table {
+    border-style: solid;
+    border-color: #e0e0e0;
+    border-width: 0.1px;
+    margin-bottom: 0px;
+    width: 360px;
+    border-bottom: 0px;
+}
+
+.item {
+    border-style: solid;
+    border-color: #e0e0e0;
     border-width: 0.9px;
     padding-bottom: 8px;
     padding-left: 11px;
+    cursor: pointer;
 }
-.item-title{
-    font-size:27px;
-    font-weight:330;
+
+.item-title {
+    font-size: 27px;
+    font-weight: 330;
 }
-.selected{
+
+.selected {
     background-color: #cee7f2;
 }
-.div-active{
+
+.div-active {
     margin-left: 80px;
+    margin-top: 20px;
 }
-.div-active-title{
+
+.div-active-title {
     font-size: xx-large;
     font-weight: 490;
 }
-.line-gap{
+
+.line-gap {
     margin-bottom: 14px;
 }
-.next-line{
+
+.next-line {
     margin-left: 67px;
 }
-.div-flex{
+
+.div-flex {
     display: flex;
-    margin-left: 850px;
+    margin-left: 900px;
     font-size: 14px;
     position: absolute;
+    margin-top: 20px;
 }
-.action{
+
+.action {
     cursor: pointer;
     display: flex;
     text-decoration: none;
     color: black;
-    margin-right: 38px;
+    margin-right: 25px;
 }
 
-.action-name{
+.action-name {
     padding-left: 9px;
     margin-top: 13px;
 }
-.action-icon{
+
+.action-icon {
     margin-top: 10px;
 }
-.caution{
+
+.caution {
     margin-top: 40px;
     font-size: xx-large;
 }

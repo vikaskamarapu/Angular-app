@@ -1,46 +1,62 @@
 .add-page {
     display: flex;
+    padding: 20px;
 }
 
 .add-button {
     text-align: right;
 }
 
+.btn {
+    font-weight: 600;
+    width: 120px;
+}
+
 .form-box {
     width: 720px;
-    box-shadow: black 1px 1px 5px;
-    margin: 25px;
-    margin-top: 22px;
+    box-shadow: rgb(45, 45, 45) 1px 1px 20px;
+    margin-left: 25px;
     padding: 20px;
+    margin-top: 10px;
 }
-.page-body{
-    padding: 20px;
+
+.form-inputs{
+    width: 555px;
 }
-.subb-heading{
-    font-size:medium;
+
+
+.subb-heading {
+    font-size: medium;
     margin: 0px;
     margin-top: 5px;
+    margin-bottom: 20px;
 }
-.page-container{
-    display: flex;
-}
-.table{
-    width: 382px;
-    margin-top: 20px;
-    border:solid #CCCCCC;
+
+
+.table {
+    border-style: solid;
+    border-color: #e0e0e0;
     border-width: 0.1px;
+    margin-bottom: 0px;
+    width: 360px;
+    border-bottom: 0px;
 }
-.item{
-    border:solid #CCCCCC;
+
+.item {
+    border-style: solid;
+    border-color: #e0e0e0;
     border-width: 0.9px;
     padding-bottom: 8px;
     padding-left: 11px;
+    cursor: pointer;
 }
-.item-title{
-    font-size:27px;
-    font-weight:330;
+
+.item-title {
+    font-size: 27px;
+    font-weight: 330;
 }
-.caution{
+
+.caution {
     margin-top: 40px;
     font-size: xx-large;
 }

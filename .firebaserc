@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "contacts-fosterate": {
+      "hosting": {
+        "Angular-app": [
+          "contacts-fosterate"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "contacts-fosterate"
+  }
+}

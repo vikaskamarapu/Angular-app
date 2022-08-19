@@ -7,33 +7,26 @@
 </head>
 
 <body>
-    <div class="page-body">
-        <h5 class="subb-heading" *ngIf="userService.arr.length > 0">CONTACTS</h5>
-        <div class="page-container">
-            <div [ngClass]="{'table':userService.arr.length > 0}">
-                <div *ngFor="let contact of userService.arr; let i = index;">
-                    <div class="item" (click)="showDetails(i)">
-                        <div class="item-title">{{contact.name}}</div>
-                        <div>{{contact.email}}</div>
-                        <div>{{contact.mobile}}</div>
-                    </div>
+    <div class="add-page">
+        <div>
+            <h5 class="subb-heading" *ngIf="userService.arr.length > 0">CONTACTS</h5>
+            <div class="table" *ngFor="let contact of userService.arr; let i = index;">
+                <div class="item" (click)="showDetails(i)">
+                    <div class="item-title">{{contact.name}}</div>
+                    <div>{{contact.email}}</div>
+                    <div>{{contact.mobile}}</div>
                 </div>
             </div>
-
-            <div class="caution" *ngIf="userService.arr.length==0">
-                No Contacts Available
-            </div>
-
-            <div class="form-box">
-                <form [formGroup]="addContactForm" (ngSubmit)="onSubmit()">
+        </div>
+        <div class="form-box">
+            <form [formGroup]="addContactForm" (ngSubmit)="onSubmit()">
+                <div class="form-inputs">
                     <div class="form-group">
                         <label> <b>Name</b> <span class="text-danger">*</span></label>
                         <input
                             [class.is-invalid]="addContactForm.get('name')?.invalid && addContactForm.get('name')?.touched"
                             formControlName="name" type="text" class="form-control" required>
-                        <small
-                            [class.d-none]="addContactForm.get('name')?.valid || addContactForm.get('name')?.untouched"
-                            class="text-danger">Username is required</small>
+                        <div class="invalid-feedback">Username is required</div>
                     </div>
 
                     <div class="form-group">
@@ -41,9 +34,10 @@
                         <input
                             [class.is-invalid]="addContactForm.get('email')?.invalid && addContactForm.get('email')?.touched"
                             formControlName="email" type="email" class="form-control" required>
-                        <small
-                            [class.d-none]="addContactForm.get('email')?.valid || addContactForm.get('email')?.untouched"
-                            class="text-danger">Email is required</small>
+                        <div class="invalid-feedback" *ngIf="addContactForm.get('email')?.invalid && addContactForm.get('email')?.touched">
+                            <div *ngIf="addContactForm.get('email')?.errors?.['required']" >Email is required</div>
+                            <div *ngIf="addContactForm.get('email')?.errors?.['email']" >Invalid email</div>
+                        </div>
                     </div>
 
                     <div class="row">
@@ -52,9 +46,10 @@
                             <input
                                 [class.is-invalid]="addContactForm.get('mobile')?.invalid && addContactForm.get('mobile')?.touched"
                                 formControlName="mobile" type="text" class="form-control" required>
-                            <small
-                                [class.d-none]="addContactForm.get('mobile')?.valid || addContactForm.get('mobile')?.untouched"
-                                class="text-danger">Mobile is required</small>
+                            <div class="invalid-feedback" *ngIf="addContactForm.get('mobile')?.invalid && addContactForm.get('email')?.touched">
+                                <div *ngIf="addContactForm.get('mobile')?.errors?.['required']">Mobile no. is required</div>
+                                <div *ngIf="addContactForm.get('mobile')?.errors?.['pattern']">Invalid Mobile no.</div>
+                            </div>
                         </div>
                         <div class="col">
                             <label><b>Landline</b></label>
@@ -72,11 +67,12 @@
                         <textarea formControlName="address" class="form-control">
                 </textarea>
                     </div>
-                    <div class="add-button">
-                        <button class="btn bg-success" type="submit"> Add </button>
-                    </div>
-                </form>
-            </div>
+                </div>
+                <div class="add-button">
+                    <button class="btn bg-success" [disabled]="!addContactForm.valid" type="submit">Add</button>
+                </div>
+            </form>
+
         </div>
     </div>
 </body>
