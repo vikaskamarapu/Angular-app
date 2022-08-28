@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { UserService } from '../user.service';
+import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,12 +19,12 @@ export class EditComponent implements OnInit {
   constructor(private editForm: FormBuilder, public userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    this.name = this.userService.arr[this.userService.selectedindex].name;
-    this.email = this.userService.arr[this.userService.selectedindex].email;
-    this.mobile = this.userService.arr[this.userService.selectedindex].mobile;
-    this.landline = this.userService.arr[this.userService.selectedindex].landline;
-    this.website = this.userService.arr[this.userService.selectedindex].website;
-    this.address = this.userService.arr[this.userService.selectedindex].address;
+    this.name = this.userService.contacts[this.userService.selectedindex].name;
+    this.email = this.userService.contacts[this.userService.selectedindex].email;
+    this.mobile = this.userService.contacts[this.userService.selectedindex].mobile;
+    this.landline = this.userService.contacts[this.userService.selectedindex].landline;
+    this.website = this.userService.contacts[this.userService.selectedindex].website;
+    this.address = this.userService.contacts[this.userService.selectedindex].address;
     this.editContactForm.patchValue({
       name: this.name,
       email: this.email, 
@@ -32,7 +32,7 @@ export class EditComponent implements OnInit {
       landline: this.landline, 
       website: this.website, 
       address: this.address
-    })
+    });
   }
   editContactForm = this.editForm.group({
     name: [this.name, Validators.required],
@@ -45,8 +45,8 @@ export class EditComponent implements OnInit {
 
 
   onSubmit() {
-    this.userService.arr[this.userService.selectedindex] = this.editContactForm.value;
-    this.router.navigate(['/'])
+    this.userService.contacts[this.userService.selectedindex] = this.editContactForm.value;
+    this.router.navigate(['/']);
 
   }
   showDetails(i: number) {

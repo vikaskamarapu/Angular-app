@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { UserService } from '../user.service';
+import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -22,12 +22,12 @@ export class AddComponent implements OnInit {
     landline: ['',],
     website: [''],
     address: [''],
-  })
+  });
   onSubmit() {
-    this.userService.arr.push(this.addContactForm.value)
-    this.userService.selectedindex = this.userService.arr.length - 1;
+    this.userService.contacts.push(this.addContactForm.value);
+    this.userService.selectedindex = this.userService.contacts.length - 1;
     this.userService.showContacts = true;
-    this.router.navigate(['/'])
+    this.router.navigate(['/']);
   }
   showDetails(i: number) {
     this.userService.selectedindex = i;

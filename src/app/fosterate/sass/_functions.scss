@@ -1,0 +1,11 @@
+@function width($width-for){
+    @return map-get($map: $widths, $key: $width-for);
+}
+
+@function font-size($size-for){
+    @return map-get($map: $font-sizes, $key: $size-for);
+}
+
+@function text-color($color){
+    @return map-get($map: $text-colors, $key: $color);
+}

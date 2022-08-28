@@ -1,0 +1,49 @@
+@import '../../sass/variables';
+@import '../../sass/functions';
+@import '../../sass/resets';
+@import '../../sass/mixins';
+
+@include heading-styles;
+@include caution-styles;
+@include table-styles(true);
+
+.div-active {
+    margin-left: 80px;
+    margin-top: 20px;
+
+    .div-active-title {
+        font-size: font-size(active-title);
+        font-weight: 490;
+    }
+
+    .line-gap {
+        margin-bottom: 14px;
+    }
+}
+
+
+
+.div-flex {
+    display: flex;
+    margin-left: 900px;
+    position: absolute;
+    margin-top: 20px;
+
+    .action {
+        cursor: pointer;
+        display: flex;
+        text-decoration: none;
+        color: text-color(dark);
+        margin-right: 25px;
+        font-size: font-size(action-name);
+
+        .action-name {
+            padding-left: 9px;
+            margin-top: 13px;
+        }
+
+        .action-icon {
+            margin-top: 10px;
+        }
+    }
+}

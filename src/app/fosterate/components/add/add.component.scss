@@ -1,0 +1,8 @@
+@import '../../sass/variables';
+@import '../../sass/functions';
+@import '../../sass/resets';
+@import '../../sass/mixins';
+
+@include heading-styles;
+@include table-styles(false);
+@include form-styles;

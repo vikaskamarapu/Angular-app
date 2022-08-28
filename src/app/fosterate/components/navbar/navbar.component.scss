@@ -1,0 +1,59 @@
+@import '../../sass/variables';
+@import '../../sass/functions';
+
+.nav-bar {
+    display: flex;
+    background-color: $nav-color;
+    color: text-color(light);
+    margin-top: 0px;
+    padding: 0px;
+    justify-content: space-between;
+    margin-bottom: 0px;
+
+    .nav-items {
+        display: flex;
+        margin-left: 13px;
+
+        .nav-item {
+            display: flex;
+        }
+    }
+
+    .active {
+        background-color: $nav-item-color;
+        color: text-color(dark);
+
+        &:hover {
+            text-decoration: none;
+            color: text-color(dark);
+        }
+
+        .active-line {
+            background-color: text-color(light);
+            width: 2px;
+        }
+    }
+
+
+
+    .blog-icon {
+        padding: 6px 0px 0px 0px;
+        margin-right: 20px;
+        margin-bottom: 2px;
+        margin-top: 2px;
+    }
+
+    a {
+        text-decoration: none;
+        background-color: $nav-color;
+        color: text-color(light);
+        padding: 8px 8px 8px 10px;
+        font-size: 15px;
+        margin-right: 7px;
+
+        &:hover {
+            text-decoration: none;
+            color: text-color(light);
+        }
+    }
+}
