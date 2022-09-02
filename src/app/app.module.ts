@@ -5,6 +5,9 @@ import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./fosterate/components/header/header.component";
 import { NavbarComponent } from "./fosterate/components/navbar/navbar.component";
 import { FosterateModule } from "./fosterate/fosterate.module";
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,9 @@ import { FosterateModule } from "./fosterate/fosterate.module";
   imports: [
     BrowserModule,
     FosterateModule,
-    AppRoutingModule
+    AppRoutingModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]

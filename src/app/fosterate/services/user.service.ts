@@ -17,4 +17,11 @@ export class UserService {
   ]
 
   constructor() { }
+
+  getContactDetails(i:number){
+    return this.contacts[i];
+  }
+  getAllContacts(){
+    return this.contacts;
+  }
 }

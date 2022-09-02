@@ -1,0 +1,7 @@
+<div class="table" *ngFor="let contact of contactList; let i = index;">
+    <div class="table-item" (click)="showDetails(contact,i)" [ngClass]="{'selected':userService.selectedindex===i}">
+        <div class="table-item-title">{{contact.name}}</div>
+        <div>{{contact.email}}</div>
+        <div>{{contact.mobile}}</div>
+    </div>
+</div>

@@ -1,13 +1,7 @@
 <div class="page-body">
     <div>
         <h5 class="subb-heading" *ngIf="userService.contacts.length > 0">CONTACTS</h5>
-        <div class="table" *ngFor="let contact of userService.contacts; let i = index;">
-            <div class="table-item" (click)="showDetails(i)" [ngClass]="{'selected':userService.selectedindex===i}">
-                <div class="table-item-title">{{contact.name}}</div>
-                <div>{{contact.email}}</div>
-                <div>{{contact.mobile}}</div>
-            </div>
-        </div>
+        <app-table (contactSelected)="onContactSelected($event)"></app-table>
     </div>
 
     <div class="caution" *ngIf="userService.contacts.length==0">

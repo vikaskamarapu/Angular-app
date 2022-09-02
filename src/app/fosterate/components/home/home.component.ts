@@ -8,6 +8,7 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  contactList : Contact[] = [];
   contactObj:Contact={
     id: '',
     name: '',
@@ -18,21 +19,14 @@ export class HomeComponent implements OnInit {
     address: ''
   }
 
-  constructor(public userService: UserService, private router: Router) { }
+  constructor(public userService: UserService, private router: Router) { 
+    this.contactObj=this.userService.getContactDetails(this.userService.selectedindex);
+  }
 
   ngOnInit(): void {
-    this.contactObj.name=this.userService.contacts[this.userService.selectedindex].name;
-    this.contactObj.email = this.userService.contacts[this.userService.selectedindex].email;
-    this.contactObj.mobile = this.userService.contacts[this.userService.selectedindex].mobile;
-    this.contactObj.landline = this.userService.contacts[this.userService.selectedindex].landline;
-    this.contactObj.website = this.userService.contacts[this.userService.selectedindex].website;
-    this.contactObj.address = this.userService.contacts[this.userService.selectedindex].address;
+    
   }
-  showDetails(i: number) {
-    this.userService.selectedindex= i;
-    this.userService.showContacts=true;
-    this.ngOnInit();
-  }
+
   onEdit(){
     this.router.navigate(['/edit']);
   }
@@ -42,5 +36,8 @@ export class HomeComponent implements OnInit {
     if(this.userService.contacts.length===0){
       this.userService.showContacts=false;
     }
+  }
+  onContactSelected(event:Contact){
+    this.contactObj=event;
   }
 }

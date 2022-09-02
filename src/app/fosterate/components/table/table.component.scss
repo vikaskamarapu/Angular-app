@@ -1,0 +1,5 @@
+@import '../../sass/variables';
+@import '../../sass/functions';
+@import '../../sass/mixins';
+
+@include table-styles(true);
